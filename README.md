@@ -6,3 +6,7 @@ Added html and css files<br>
 ## 2023-10-16
 Adding CSS for grid<br>
 updating topnav<br>
+## 2023-10-17
+Updating CSS - Adding Grids<br>
+Updating index.html<br>
+Updating profile.html<br>
