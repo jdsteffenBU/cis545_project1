@@ -1,9 +1,10 @@
 *{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: darkgrey;
+    /*background-image: url(work.png);*/
 }
 body{
-    background-image: url(work.png);
+    /*background-image: url(work.png);*/
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -43,10 +44,11 @@ body{
   .wrapper{
     display:grid;
     /*grid-template-columns: repeat(3, 1fr);*/
-    grid-template-columns: minmax(200px,100px);
+    grid-template-columns: 200px auto;
     /*grid-template-columns: 800px;*/
     grid-gap: 10px;
-    grid-auto-rows:auto);
+    grid-auto-rows:auto;
+    grid-template-rows: auto auto;
     color: #444;
   }
   .fullbox{
@@ -80,4 +82,8 @@ body{
     grid-column-end: 3;
     /*margin-left: auto;*/
     /*margin-right: auto;*/
+  }
+  a{
+    background-color: #445a5c;
+    color: #67e8ff;
   }
