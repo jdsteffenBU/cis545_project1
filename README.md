@@ -10,7 +10,11 @@ updating topnav<br>
 Updating CSS - Adding Grids<br>
 Updating index.html<br>
 Updating profile.html<br>
-## 2023-10-17
-Updating CSS - Grid management
-Updating reflection.html
-Updating showcase.html
+## 2023-10-18
+Updating CSS - Grid management<br>
+Updating reflection.html<br>
+Updating showcase.html<br>
+## 2023-10-19
+Updating CSS - photo hover over<br>
+Updating qualifications.html<br>
+Updating contact.html<br>
