@@ -18,3 +18,6 @@ Updating showcase.html<br>
 Updating CSS - photo hover over<br>
 Updating qualifications.html<br>
 Updating contact.html<br>
+## 2023-10-20
+Adding cars.html - shows information about a random car<br>
+currently have info on 8 cars

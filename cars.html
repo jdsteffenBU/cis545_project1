@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate a Random Car</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+/*
+        function Car(make, model, years, info, picture, source, sourcetext){
+            this.carMake = make;
+            this.carModel = model;
+            this.carYears = years;
+            this.carInfo = info;
+            this.carPicture = picture;
+            this.carSource = source;
+            this.carSourceText = sourcetext;
+        }
+*/
+        let carArray = [
+            {
+                make: 'Chevrolet',
+                model: 'Monte Carlo SS',
+                years: '1983-1988',
+                info: 'The Chevrolet Monte Carlo is a two-door coupe that was manufactured and marketed by the Chevrolet division of General Motors. Deriving its name from the city in Monaco, the Monte Carlo was marketed as the first personal luxury car of the Chevrolet brand. Introduced for the 1970 model year, the model line was produced across six generations through the 2007 model year, with a hiatus from 1989 to 1994. The Monte Carlo was a closely aligned variant of the Pontiac Grand Prix through its entire production.',
+                picture: 'montecarlo.jpg',
+                source: 'https://en.wikipedia.org/wiki/Chevrolet_Monte_Carlo',
+                sourceName: 'Monte Carlo Wikipedia'
+            },
+            {
+                make: 'Ford',
+                model: 'Mustang (Fox Body)',
+                years: '1979-1993',
+                info: 'The third-generation Mustang was produced by Ford from 1979 until 1993. Built on Ford\'s Fox platform, it is commonly referred to as the Fox body Mustang. It evolved through several sub-models, trim levels, and drivetrain combinations during its production life. It underwent updates for the 1987 model year and seemed destined for replacement with a front-wheel drive Mazda platform. However, company executives were swayed by consumer opinion and the rear-wheel drive Mustang stayed, while the front-wheel drive version was renamed the Ford Probe. Enthusiasts group the generation into two segments: the 1979–1986 cars, with their quad headlight arrangement, and the 1987–1993 cars, with their aerodynamic composite headlamps and front fascia styling. Production ended with the introduction of the fourth-generation Mustang (SN-95) for the 1994 model year.',
+                picture: 'foxbodymustang.jpg',
+                source: 'https://en.wikipedia.org/wiki/Ford_Mustang_(third_generation)',
+                sourceName: 'Ford Mustang (Third Gen) Wikipedia'
+                
+            },
+            {
+                make: 'Pontiac',
+                model: 'GTO',
+                years: '1964-1974 & 2004-2006',
+                info: 'The Pontiac GTO is a front-engine, rear-drive, two-door, four- or five-passenger automobile manufactured and marketed by the Pontiac division of General Motors over four generations from 1963 until 1974 in the United States — with a fifth generation by GM\'s Australian subsidiary, Holden, for the 2004 through 2006 model years.The first generation of the GTO is credited with popularizing the muscle car market segment in the 1960s. The Pontiac GTO is considered by some to have started the trend with all four domestic automakers offering a variety of competing models.',
+                picture: 'gto.jpg',
+                source: 'https://en.wikipedia.org/wiki/Pontiac_GTO',
+                sourceName: 'Pontiac GTO Wikipedia'
+            },
+            {
+                make: 'Bugatti',
+                model: 'Veyron',
+                years: '2005-2015',
+                info: 'The Bugatti Veyron EB 16.4 is a mid-engine sports car, designed and developed in Germany by the Volkswagen Group and Bugatti and manufactured in Molsheim, France, by French automobile manufacturer Bugatti. It was named after the racing driver Pierre Veyron.<br><br>The original version has a top speed of 407 km/h (253 mph).[5][6] It was named the 2000s Car of the Decade by the BBC television programme Top Gear. The standard Veyron also won Top Gear\'s Best Car Driven All Year award in 2005.<br><br>The Super Sport version of the Veyron is one of the fastest street-legal production cars in the world, with a top speed of 431.072 km/h (267.856 mph).[7] The Veyron Grand Sport Vitesse was the fastest roadster in the world, reaching an averaged top speed of 408.84 km/h (254.04 mph) in a test on 6 April 2013.',
+                picture: 'veyron.jpg',
+                source: 'https://en.wikipedia.org/wiki/Bugatti_Veyron',
+                sourceName: 'Bugatti Veyron Wikipedia'
+            },
+            {
+                make: 'Chevrolet',
+                model: 'Corvette (C8)',
+                years: '2020-present',
+                info: 'The Chevrolet Corvette (C8) is the eighth generation of the Corvette sports car manufactured by American automobile manufacturer Chevrolet. It is the first rear mid-engine Corvette since the model\'s introduction in 1953, differing from the traditional front mid-engine design started in 1963. The C8 was announced in April 2019, and the coupe made its official debut on July 18, 2019, in Tustin, California. The convertible made its debut in October 2019 during a media event at the Kennedy Space Center to coincide with the 50th anniversary of the Apollo 11 mission. The racing version, the Chevrolet Corvette C8.R, also made its debut that same month.',
+                picture: 'corvettec8.jpg',
+                source: 'https://en.wikipedia.org/wiki/Chevrolet_Corvette_(C8)',
+                sourceName: 'C8 Corvette Wikipedia'
+            },
+            {
+                make: 'Subaru',
+                model: 'Impreza WRX STi',
+                years: '1994-2021',
+                info: 'In 1994, Subaru introduced Subaru Tecnica International (STi badged) versions of the WRX in Japan. These models were upgraded from the standard WRX in many categories, including blueprinted performance-tuned engines, transmissions, and suspensions. The STi versions of the WRX were immensely successful in rallies and popular among street racers but were only sold in the Japanese market. Compared to the WRX, the STi had mostly mechanical modifications. (STi prepped Subaru rally cars since 1988 including the Legacy RS, the WRX STi Version was just the first car with an actual STi badge, though with handcrafted tuning).',
+                picture: 'subarusti.jpg',
+                source: 'https://en.wikipedia.org/wiki/Subaru_Impreza',
+                sourceName: 'Subaru Impreza Wikipedia'
+            },
+            {
+                make: 'Toyota',
+                model: 'Sprinter Trueno',
+                years: '1972-2000',
+                info: 'The Toyota Sprinter Trueno (Japanese:トヨタ・スプリンタートレノ, Toyota Supurintā Toreno) is a series of compact sports coupés and hot hatches which were produced by Toyota from 1972 to 2000. The name Trueno in Spanish means thunder. In Japan, the Sprinter Trueno was exclusive to Toyota Auto Store locations, later renamed Toyota Vista Store in 1980.<br><br>Its twin, the Toyota Corolla Levin (Japanese:トヨタ・カローラレビン, Toyota Karōra Rebin), was produced around the same time as the Sprinter Trueno. The name Levin in Old English means lightning. In Japan, the Corolla Levin was exclusive to Toyota Corolla Store locations.',
+                picture: 'trueno.jpg',
+                source: 'https://en.wikipedia.org/wiki/Toyota_Sprinter_Trueno#/media/File:Toyota_Corolla_GT_AE86_Trueno_hatchback.jpg',
+                sourceName: 'Toyota Corolla/GT/AE86/Trueno Wikipedia'
+            },
+            {
+                make: 'Porsche',
+                model: '911',
+                years: '1964-present',
+                info: 'The Porsche 911 (pronounced Nine Eleven or in German: Neunelf) is a two-door 2+2 high performance rear-engined sports car introduced in September 1964 by Porsche AG of Stuttgart, Germany. It has a rear-mounted flat-six engine and originally a torsion bar suspension. The car has been continuously enhanced through the years but the basic concept has remained unchanged. The engines were air-cooled until the introduction of the 996 series in 1998.',
+                picture: 'porsche911.jpg',
+                source: 'https://en.wikipedia.org/wiki/Porsche_911',
+                sourceName: 'Porsche 911 Wikipedia'
+            },
+        ]
+        /*
+        const montecarlo = new Car('Chevrolet','Monte Carlo SS','1983-1988','The Chevrolet Monte Carlo is a two-door coupe that was manufactured and marketed by the Chevrolet division of General Motors. Deriving its name from the city in Monaco, the Monte Carlo was marketed as the first personal luxury car of the Chevrolet brand. Introduced for the 1970 model year, the model line was produced across six generations through the 2007 model year, with a hiatus from 1989 to 1994. The Monte Carlo was a closely aligned variant of the Pontiac Grand Prix through its entire production.','montecarlo.jpg','https://en.wikipedia.org/wiki/Chevrolet_Monte_Carlo','Monte Carlo Wikipedia');
+        const foxbodymustang = new Car('Ford','Mustang (Fox Body)','1979-1993','The third-generation Mustang was produced by Ford from 1979 until 1993. Built on Ford\'s Fox platform, it is commonly referred to as the Fox body Mustang. It evolved through several sub-models, trim levels, and drivetrain combinations during its production life. It underwent updates for the 1987 model year and seemed destined for replacement with a front-wheel drive Mazda platform. However, company executives were swayed by consumer opinion and the rear-wheel drive Mustang stayed, while the front-wheel drive version was renamed the Ford Probe. Enthusiasts group the generation into two segments: the 1979–1986 cars, with their quad headlight arrangement, and the 1987–1993 cars, with their aerodynamic composite headlamps and front fascia styling. Production ended with the introduction of the fourth-generation Mustang (SN-95) for the 1994 model year.','foxbodymustang.jpg','https://en.wikipedia.org/wiki/Ford_Mustang_(third_generation)','Ford Mustang (Third Gen) Wikipedia');
+        const gto = new Car('Pontiac','GTO','1964-1974 & 2004-2006','The Pontiac GTO is a front-engine, rear-drive, two-door, four- or five-passenger automobile manufactured and marketed by the Pontiac division of General Motors over four generations from 1963 until 1974 in the United States — with a fifth generation by GM\'s Australian subsidiary, Holden, for the 2004 through 2006 model years.The first generation of the GTO is credited with popularizing the muscle car market segment in the 1960s. The Pontiac GTO is considered by some to have started the trend with all four domestic automakers offering a variety of competing models.','gto.jpg','https://en.wikipedia.org/wiki/Pontiac_GTO','Pontiac GTO Wikipedia');
+        */
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        }
+        function getCar(){
+            let randomnum = getRandomInt(8);
+            console.log(randomnum);
+            document.getElementById("makebox").innerHTML=carArray[randomnum].make;
+            document.getElementById("modelbox").innerHTML=carArray[randomnum].model;
+            document.getElementById("yearsbox").innerHTML=carArray[randomnum].years;
+            document.getElementById("infobox").innerHTML=carArray[randomnum].info;
+            document.getElementById("picturebox").innerHTML='<img src=cars/' + carArray[randomnum].picture + '>';
+            document.getElementById("sourcebox").innerHTML='<a href=' + carArray[randomnum].source + '>' + carArray[randomnum].sourceName + '</a>';
+        }
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="topnav">
+            <a href="index.html">Home</a>
+            <a href="profile.html">Profile</a>
+            <a href="reflection.html">Reflection</a>
+            <a href="showcase.html">Showcases/Achivements</a>
+            <a href="qualifications.html">Qualifications</a>
+            <a href="contact.html">Contact</a>
+            <a class="active" href="cars.html">Random Car</a>
+        </div>
+        <div class="fullbox" style="font-size:25px;">Random Car</div>
+        <div class="fullbox"><button onclick="getCar()">Get a Random Car</button></div>
+        <div class="qbox">Make</div>
+        <div class="abox" id="makebox"></div>
+        <div class="qbox">Model</div>
+        <div class="abox" id="modelbox"></div>
+        <div class="qbox">Years</div>
+        <div class="abox" id="yearsbox"></div>
+        <div class="qbox">Info</div>
+        <div class="abox" id="infobox"></div>
+        <div class="qbox">Picture</div>
+        <div class="abox" id="picturebox"></div>
+        <div class="qbox">Source</div>
+        <div class="abox" id="sourcebox"></div>
+    </div>
+
+</body>
+</html>
